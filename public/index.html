@@ -16,38 +16,42 @@
   <body>
     <form>
       <div class="form-group">
-        <label for="bill">Input your Total Bill Before Tip</label>
+        <label for="bill">Input your total bill before tip:</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="totalBill"
-          aria-describedby="emailHelp"
+          aria-describedby="totalBill"
+          step="0.01"
         />
-        <small id="emailHelp" class="form-text text-muted"
-          >Input your total bill here</small
+        <small id="totalBill" class="form-text text-muted"
+          >Please input your total bill before tip here.</small
         >
       </div>
       <div class="form-group">
-        <label for="numGuests">Input the number of guests</label>
+        <label for="numGuests">Input the number of guests:</label>
         <input
           type="number"
           class="form-control"
           id="numGuests"
-          aria-describedby="emailHelp"
+          aria-describedby="numGuests"
         />
-        <small id="emailHelp" class="form-text text-muted"
+        <small id="numGuests" class="form-text text-muted"
           >Please input the number of guests here.</small
         >
       </div>
       <div class="form-group">
-        <label for="servQual">Quality of Service (out of 5)</label>
+        <label for="servQual">Quality of Service (out of 5):</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="servQual"
-          aria-describedby="emailHelp"
+          aria-describedby="servQual"
+          step="0.5"
+          min="0"
+          max="5"
         />
-        <small id="emailHelp" class="form-text text-muted"
+        <small id="servQual" class="form-text text-muted"
           >How would you rate the quality of the serive out of 5?</small
         >
       </div>
@@ -86,3 +90,5 @@
     <script src="index.js"></script>
   </body>
 </html>
+
+<!-- https://stackoverflow.com/questions/19011861/is-there-a-float-input-type-in-html5 -->
