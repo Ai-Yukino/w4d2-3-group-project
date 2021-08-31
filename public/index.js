@@ -1,4 +1,4 @@
-console.log("test");
+// console.log("test");
 
 class Data {
   constructor(totalBill, numGuests, servQual) {
@@ -37,3 +37,37 @@ function data() {
   // I don't know how to actually extract this since it's within a function
   // If I can't figure it out then I guess the tip calculation would have to be done here
 }
+
+// In response to the above comments,
+// We can access placehold after calling it, e.g. from an event handler
+// Also, we can rewrite "data" above using class methods
+
+// 🍂Create instance of Data object
+// and initialize it with input data on submit🍃
+
+// let inputs = new Data();
+
+// function initializeData(e) {
+//   inputs.setTotalBill(document.getElementById("totalBill").value);
+//   inputs.setNumGuests(document.getElementById("numGuests").value);
+//   inputs.setServQual(document.getElementById("servQual").value);
+//   console.log(inputs);
+// }
+
+// addEventListener("submit", initializeData);
+// console.log(document.getElementById("totalBill").value);
+
+// Example which collects the input data after submitting
+// let input = new Data();
+// console.log("Empty input");
+// console.log(input);
+
+// function dataInitialize(dataInstance) {
+//   dataInstance.setTotalBill = document.getElementById("totalBill").value;
+//   dataInstance.numGuests = document.getElementById("numGuests").value;
+//   dataInstance.setTotalBill = document.getElementById("servQual").value;
+//   //   console.log(input);
+// }
+
+// addEventListener("onSubmit", dataInitialize(input));
+// console.log("Filled input");
