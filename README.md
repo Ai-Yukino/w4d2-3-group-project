@@ -33,3 +33,14 @@ Go to
 https://github.com/Ai-Yukino/w4d2-3-group-project
 
 and do a pull request. After the merge is successful, delete your {Your Name}Branch.
+
+
+>if gitlive is being dumb, person creating files should close and open VScode and re-allow editing
+
+git add proposal.md
+git commit -m "Added proposal"
+git add pulic
+git commit -m "Added HTML, CSS JS"
+git add readme
+git commit -m "Edited README"
+git push origin ...
