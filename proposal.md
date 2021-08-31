@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 Create a brief proposal of what the team plans to include in the project. A checklist will be fine.
 
 # Checklist
@@ -18,10 +15,15 @@ Create a brief proposal of what the team plans to include in the project. A chec
         totalBill*tipPercent
     css later I guess
 
-    # Suggested responsibilities
+# Suggested responsibilities
 
-    ## Andrew
+Originally, we decided the following:
+
+    Andrew
         HTML
-    ## Ai
+        Some JS
+    Ai
         CSS
->>>>>>> 7f78ec4292258f9acafc7d74c865d798fcd5ab17
+        Some JS
+
+But you can look at the commit history to see what we each contributed.
