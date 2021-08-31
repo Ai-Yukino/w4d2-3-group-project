@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 Create a brief proposal of what the team plans to include in the project. A checklist will be fine.
 
 # Checklist
@@ -21,3 +24,4 @@ Create a brief proposal of what the team plans to include in the project. A chec
         HTML
     ## Ai
         CSS
+>>>>>>> 7f78ec4292258f9acafc7d74c865d798fcd5ab17
