@@ -1,8 +1,13 @@
 # w4d2-3-group-project
 
+# Type of project
+
+Tip calculator
+
 # Members
 
 Ai Yukino
+Andrew Ramirez
 
 # Getting started
 
@@ -34,8 +39,7 @@ https://github.com/Ai-Yukino/w4d2-3-group-project
 
 and do a pull request. After the merge is successful, delete your {Your Name}Branch.
 
-
->if gitlive is being dumb, person creating files should close and open VScode and re-allow editing
+> if gitlive is being dumb, person creating files should close and open VScode and re-allow editing
 
 git add proposal.md
 git commit -m "Added proposal"
