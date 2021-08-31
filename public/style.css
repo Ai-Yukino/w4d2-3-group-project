@@ -3,9 +3,11 @@
 }
 
 form {
-  background-color: snow;
+  background-color: #fcc9b9;
   width: 30%;
   border-radius: 10px;
   margin: 10px 20px;
   padding: 10px 10px;
 }
+
+/* https://en.wikipedia.org/wiki/Traditional_colors_of_Japan */
