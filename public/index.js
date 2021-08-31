@@ -42,6 +42,7 @@ class Data {
 // In response to the above comments,
 // We can access placehold after calling it, e.g. from an event handler
 // Also, we can rewrite "data" above using class methods
+// See the following sections's approach
 
 // 🍂Get input data after submit🍃
 let inputs = new Data();
@@ -57,3 +58,5 @@ function initializeData(e) {
 }
 
 formRef.addEventListener("submit", initializeData);
+
+// 🍂Arithmetic🍃
