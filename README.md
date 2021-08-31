@@ -7,6 +7,7 @@ Tip calculator
 # Members
 
 Ai Yukino
+
 Andrew Ramirez
 
 # Getting started
