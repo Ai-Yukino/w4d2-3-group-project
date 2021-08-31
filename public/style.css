@@ -4,7 +4,7 @@
 
 form {
   background-color: #fcc9b9;
-  width: 30%;
+  width: 33%;
   border-radius: 10px;
   margin: 10px 20px;
   padding: 10px 10px;
@@ -12,9 +12,16 @@ form {
 
 .output {
   background-color: #fcc9b9;
-  width: 30%;
+  width: 33%;
   border-radius: 10px;
   margin: 10px 20px;
   padding: 10px 10px;
+}
+
+.output > div {
+  background-color: #ffb3a7;
+  border-radius: 10px;
+  margin: 5px 5px;
+  padding: 5px 5px;
 }
 /* https://en.wikipedia.org/wiki/Traditional_colors_of_Japan */
