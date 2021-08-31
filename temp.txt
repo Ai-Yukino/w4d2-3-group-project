@@ -1,0 +1,17 @@
+Html/JS (?)
+	- Add text input for
+		○ Total bill: (number >0)
+		○ number of guests (integer >0)
+		○ and quality of service (rating out of 5?)
+	- Submit option
+
+JS
+	- Calculating the Tip
+		○ Idk, like totalBill*.2*quality of serice*something with guests
+		○ Probably using 'get' and stuff~
+	- Print out suggested tip
+	- Create a class to make an object out of the inputs, use the object to calculate all of this
+	- Arrays?
+
+CSS
+Make it look good idk
