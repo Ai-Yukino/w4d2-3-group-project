@@ -51,14 +51,10 @@
           >How would you rate the quality of the serive out of 5?</small
         >
       </div>
-      <button
-        type="submit"
-        class="btn btn-primary"
-        id="button"
-        onclick="data()"
-      >
-        Submit
-      </button>
+      <button type="submit" class="btn btn-primary" id="button">Submit</button>
+      <!-- onclick="data()" -->
+      <!-- inline event handlers are considered bad practice
+        https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#inline_event_handlers_%E2%80%94_dont_use_these -->
     </form>
 
     <div class="output">
