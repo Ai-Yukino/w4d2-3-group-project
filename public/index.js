@@ -56,7 +56,6 @@ class Data {
 }
 
 // 🍂Variables for building event handler🍃
-
 // 🌿Global variables🌿
 // Instance of Data object
 let inputs = new Data();
@@ -90,7 +89,6 @@ let prevTotalTipRef = document.getElementById("prevTotalTip"),
   prevTipPerPersonRef = document.getElementById("prevTipPerPerson");
 
 // 🍂Component functions in handleSubmit() event handler🍃
-
 // 🌿Fill inputs instance with user inputs🌿
 function initializeData(e) {
   //Prevents page refresh on submit
@@ -124,19 +122,16 @@ function calculate(e) {
   inputs.setTipPerPerson = (inputs.getTotalTip / inputs.getNumGuests).toFixed(
     2
   );
-  console.log(inputs.getTotalTipPercentage);
-  console.log(inputs.getTotalTip);
-  console.log(inputs.getTipPerPerson);
 }
 
 function display(e) {
-  displayTotalBillRef.textContent = inputs.getTotalBill;
-  displayNumGuestsRef.textContent = inputs.getNumGuests;
-  displayServQualRef.textContent = inputs.getServQual;
+  displayTotalBillRef.textContent = `\$${inputs.getTotalBill}`;
+  displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+  displayServQualRef.textContent = `${inputs.getServQual} / 5`;
 
-  totalTipPercentageRef.textContent = inputs.getTotalTipPercentage;
-  totalTipRef.textContent = inputs.getTotalTip;
-  tipPerPersonRef.textContent = inputs.getTipPerPerson;
+  totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
+  totalTipRef.textContent = `\$${inputs.getTotalTip}`;
+  tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
 }
 
 // 🌿Store history🌿
