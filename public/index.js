@@ -142,15 +142,15 @@ function displayCurrent() {
 }
 
 // 🌿Stores history of inputs instances in histArr🌿
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#enumerate_the_properties_of_an_object
 function storeHistory() {
+  console.log(histArr);
+  let i = histArr.length;
   histArr.push([]);
-  i = histArr.indexOf([]);
-  console.log(j);
-  // 🍁Need to "loop" over inputs object🍁
-  // Below does not work
-  // for (j = 0; j < length.histArr; j++) {
-  //   histArr[i][j]
-  // }
+  console.log(histArr);
+  for (const property in inputs) {
+    histArr[i].push(inputs[property]);
+  }
 }
 
 // 🌿history()🌿
