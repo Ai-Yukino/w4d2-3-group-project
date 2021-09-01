@@ -61,7 +61,7 @@ let totalTipRef = document.getElementById("totalTip"),
   totalTipPercentageRef = document.getElementById("totalTipPercentage"),
   tipPerPersonRef = document.getElementById("tipPerPerson");
 
-// Fill inputs instance with user inputs
+// 🌿Fill inputs instance with user inputs🌿
 function initializeData(e) {
   e.preventDefault();
   // ^ Prevents page refresh on submit
@@ -89,6 +89,8 @@ function initializeData(e) {
   // but I just wanted to be safe.
 }
 
+//🌿Need output formatting
+// and formula for multiplier🌿
 function calculate(e) {
   // Display user inputs in display box
   displayTotalBillRef.textContent = inputs.totalBill;
