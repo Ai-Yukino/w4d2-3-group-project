@@ -2,10 +2,20 @@
 
 // 🍂Declare class🍃
 class Data {
-  constructor(totalBill, numGuests, servQual) {
+  constructor(
+    totalBill,
+    numGuests,
+    servQual,
+    totalTip,
+    totalTipPercentage,
+    tipPerPerson
+  ) {
     (this.totalBill = totalBill),
       (this.numGuests = numGuests),
-      (this.servQual = servQual);
+      (this.servQual = servQual),
+      (this.totalTip = totalTip),
+      (this.totalTipPercentage = totalTipPercentage),
+      (this.tipPerPerson = tipPerPerson);
   }
   get getTotalBill() {
     return this.totalBill;
@@ -16,14 +26,32 @@ class Data {
   get getServQual() {
     return this.servQual;
   }
-  setTotalBill(newTotalBill) {
+  get getTotalTip() {
+    return this.totalTip;
+  }
+  get getTotalTipPercentage() {
+    return this.totalTipPercentage;
+  }
+  get getTipPerPerson() {
+    return this.tipPerPerson;
+  }
+  set setTotalBill(newTotalBill) {
     this.totalBill = newTotalBill;
   }
-  setNumGuests(newNumGuests) {
+  set setNumGuests(newNumGuests) {
     this.numGuests = newNumGuests;
   }
-  setServQual(newServQual) {
+  set setServQual(newServQual) {
     this.servQual = newServQual;
+  }
+  set setTotalTip(newTotalTip) {
+    this.totalTip = newTotalTip;
+  }
+  set setTotalTipPercentage(newTotalTipPercentage) {
+    this.totalTipPercentage = newTotalTipPercentage;
+  }
+  set setTipPerPerson(newTipPerPerson) {
+    this.tipPerPerson = newTipPerPerson;
   }
 }
 
@@ -69,9 +97,9 @@ function initializeData(e) {
   e.preventDefault();
 
   // Store users inputs in inputs instance
-  inputs.setTotalBill(totalBillRef.value);
-  inputs.setNumGuests(numGuestsRef.value);
-  inputs.setServQual(servQualRef.value);
+  inputs.setTotalBill = totalBillRef.value;
+  inputs.setNumGuests = numGuestsRef.value;
+  inputs.setServQual = servQualRef.value;
 
   // Clear user input boxes
   totalBillRef.value = null;
@@ -81,20 +109,34 @@ function initializeData(e) {
 
 //🌿Tip calculations🌿
 function calculate(e) {
-  // Display user inputs in display box
+  // Calculate outputs
+  let multiplier = 1;
+  inputs.setTotalTipPercentage = (
+    0.05 *
+    inputs.getServQual *
+    multiplier *
+    100
+  ).toFixed(2);
+  inputs.setTotalTip = (
+    (inputs.getTotalBill * inputs.getTotalTipPercentage) /
+    100
+  ).toFixed(2);
+  inputs.setTipPerPerson = (inputs.getTotalTip / inputs.getNumGuests).toFixed(
+    2
+  );
+  console.log(inputs.getTotalTipPercentage);
+  console.log(inputs.getTotalTip);
+  console.log(inputs.getTipPerPerson);
+}
+
+function display(e) {
   displayTotalBillRef.textContent = inputs.getTotalBill;
   displayNumGuestsRef.textContent = inputs.getNumGuests;
   displayServQualRef.textContent = inputs.getServQual;
 
-  // Calculate outputs
-  let multiplier = 1;
-  totalTipPercentageRef.textContent =
-    0.05 * inputs.getServQual * multiplier * 100;
-  totalTipRef.textContent =
-    (inputs.getTotalBill * totalTipPercentageRef.textContent) / 100;
-  tipPerPersonRef.textContent = (
-    totalTipRef.textContent / inputs.getNumGuests
-  ).toFixed(2);
+  totalTipPercentageRef.textContent = inputs.getTotalTipPercentage;
+  totalTipRef.textContent = inputs.getTotalTip;
+  tipPerPersonRef.textContent = inputs.getTipPerPerson;
 }
 
 // 🌿Store history🌿
@@ -133,6 +175,7 @@ function calculate(e) {
 function handleSubmit(e) {
   initializeData(e);
   calculate(e);
+  display(e);
   // history(e);
 }
 // Attatch event handler to form
