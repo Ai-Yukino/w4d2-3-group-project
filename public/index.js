@@ -61,6 +61,12 @@ let totalTipRef = document.getElementById("totalTip"),
   totalTipPercentageRef = document.getElementById("totalTipPercentage"),
   tipPerPersonRef = document.getElementById("tipPerPerson");
 
+  let prevDisplayTotalBillRef = []
+  let prevDisplayNumGuestsRef = []
+  let prevDisplayServQualRef = []
+  let prevTotalTipRef = []
+  let prevTotalTipPercentageRef = []
+  let prevTipPerPersonRef = [];
 // 🌿Fill inputs instance with user inputs🌿
 function initializeData(e) {
   e.preventDefault();
@@ -88,7 +94,8 @@ function initializeData(e) {
   // I think .value can still work for the second section in our case,
   // but I just wanted to be safe.
 }
-
+//Declaring the history array as a global variable. and also to actually append things
+var histArr = []
 //🌿Need output formatting
 // and formula for multiplier🌿
 function calculate(e) {
@@ -106,14 +113,38 @@ function calculate(e) {
   tipPerPersonRef.textContent = (
     totalTipRef.textContent / inputs.getNumGuests
   ).toFixed(2);
+// Appends the inputs and calculations as an array, and appends that array to the array.
+  histArr.push([displayTotalBillRef.textContent,displayNumGuestsRef.textContent, displayServQualRef.textContent, totalTipPercentageRef.textContent, totalTipRef.textContent, tipPerPersonRef.textContent])
 }
 
+// The function that is supposed to log the history
+function history(e) {
+  // Both of these work, so that's something
+  // console.log(histArr[0][0])
+  // console.log(histArr)
+  for(let i=0; i<histArr.length; i++) {
+    prevDisplayTotalBillRef[i] = histArr[i][0]
+    prevDisplayNumGuestsRef[i] = histArr[i][1]
+    prevDisplayServQualRef[i] = histArr[i][2]
+    prevTotalTipPercentageRef[i] = histArr[i][3]
+    prevTotalTipRef[i] = histArr[i][4]
+    prevTipPerPersonRef[i] = histArr[i][5]
+  }
+  if (histArr.length>1) {
+    document.getElementById("prevTotalTip").innerHTML = prevTotalTipRef[histArr.length-2]
+    document.getElementById("prevTotalTipPercentage").innerHTML = prevTotalTipPercentageRef[histArr.length-2]
+    document.getElementById("prevTipPerPerson").innerHTML = prevTipPerPersonRef[histArr.length-2]
+    document.getElementById("prevTotalBillDisplay").innerHTML = prevDisplayTotalBillRef[histArr.length-2]
+    document.getElementById("prevNumGuestsDisplay").innerHTML = prevDisplayNumGuestsRef[histArr.length-2]
+    document.getElementById("prevServQualDisplay").innerHTML = prevDisplayServQualRef[histArr.length-2]
+  }
+}
 // 🍂Combine event handler pieces and attach it to form🍃
 function handleSubmit(e) {
   initializeData(e);
   calculate(e);
+  history(e)
 }
-
 // Attatch event handler to form
 // that fires when submited
 formRef.addEventListener("submit", handleSubmit);
@@ -123,3 +154,15 @@ formRef.addEventListener("submit", handleSubmit);
 // arr = [[inputs.getTotalBill, ...], []]
 // arr = [inputs_1, inputs_2, ...]
 // arr[1].getTotalBill
+// HistoryArr = [[inputs.getTotalBill, ...], []]
+// let historyRef = document.querySelector(`history`)
+
+// let temp = [];
+// let HistoryArr = [];
+
+// function tempfunction() {
+//   temp = [inputs.totalBill, inputs.numGuests, inputs.servQual];
+//   HistoryArr.push(temp);
+// }
+
+// console.log(totalTipPercentageRef);
