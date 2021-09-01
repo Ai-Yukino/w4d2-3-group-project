@@ -93,17 +93,17 @@ function initializeData(e) {
 // and formula for multiplier🌿
 function calculate(e) {
   // Display user inputs in display box
-  displayTotalBillRef.textContent = inputs.totalBill;
-  displayNumGuestsRef.textContent = inputs.numGuests;
-  displayServQualRef.textContent = inputs.servQual;
+  displayTotalBillRef.textContent = inputs.getTotalBill;
+  displayNumGuestsRef.textContent = inputs.getNumGuests;
+  displayServQualRef.textContent = inputs.getServQual;
 
   // Calculate outputs
   let multiplier = 1;
-  totalTipPercentageRef.textContent = 0.05 * inputs.servQual * multiplier * 100;
+  totalTipPercentageRef.textContent = 0.05 * inputs.getServQual * multiplier * 100;
   totalTipRef.textContent =
-    inputs.totalBill * totalTipPercentageRef.textContent;
+    inputs.getTotalBill * totalTipPercentageRef.textContent/100;
   tipPerPersonRef.textContent = (
-    totalTipRef.textContent / inputs.numGuests
+    totalTipRef.textContent / inputs.getNumGuests
   ).toFixed(2);
 }
 
