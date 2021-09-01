@@ -4,6 +4,10 @@
 
 Tip calculator
 
+# Grading
+
+Read grading.md to help with grading
+
 # Members
 
 Ai Yukino
