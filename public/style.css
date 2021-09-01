@@ -4,24 +4,32 @@
 
 form {
   background-color: #fcc9b9;
-  width: 33%;
+  width: 500px;
   border-radius: 10px;
   margin: 10px 20px;
   padding: 10px 10px;
 }
 
-.output {
+.display {
   background-color: #fcc9b9;
-  width: 33%;
+  width: 500px;
   border-radius: 10px;
   margin: 10px 20px;
   padding: 10px 10px;
 }
 
-.output > div {
+.display > div {
   background-color: #ffb3a7;
   border-radius: 10px;
   margin: 5px 5px;
   padding: 5px 5px;
+  font-weight: bold;
+}
+
+.display span:not(:empty) {
+  background-color: #f08f90;
+  border: 2px solid #f08f90;
+  border-radius: 5px;
+  font-weight: normal;
 }
 /* https://en.wikipedia.org/wiki/Traditional_colors_of_Japan */
