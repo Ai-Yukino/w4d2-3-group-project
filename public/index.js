@@ -57,6 +57,9 @@ let totalBillRef = document.getElementById("totalBill"),
 let displayTotalBillRef = document.getElementById("totalBillDisplay"),
   displayNumGuestsRef = document.getElementById("numGuestsDisplay"),
   displayServQualRef = document.getElementById("servQualDisplay");
+let totalTipRef = document.getElementById("totalTip"),
+  totalTipPercentageRef = document.getElementById("totalTipPercentage"),
+  tipPerPersonRef = document.getElementById("tipPerPerson");
 
 // Fill inputs instance with user inputs
 function initializeData(e) {
@@ -93,6 +96,13 @@ function calculate(e) {
   displayServQualRef.textContent = inputs.servQual;
 
   // Calculate outputs
+  let multiplier = 1;
+  totalTipPercentageRef.textContent = 0.05 * inputs.servQual * multiplier * 100;
+  totalTipRef.textContent =
+    inputs.totalBill * totalTipPercentageRef.textContent;
+  tipPerPersonRef.textContent = (
+    totalTipRef.textContent / inputs.numGuests
+  ).toFixed(2);
 }
 
 // 🍂Combine event handler pieces and attach it to form🍃
