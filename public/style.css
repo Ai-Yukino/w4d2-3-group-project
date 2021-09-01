@@ -32,4 +32,27 @@ form {
   border-radius: 5px;
   font-weight: normal;
 }
+
+.prev-display {
+  background-color: green;
+  width: 500px;
+  border-radius: 10px;
+  margin: 10px 20px;
+  padding: 10px 10px;
+}
+
+.prev-display > div {
+  background-color: lightgreen;
+  border-radius: 10px;
+  margin: 5px 5px;
+  padding: 5px 5px;
+  font-weight: bold;
+}
+
+.prevdisplay span:not(:empty) {
+  background-color: grey;
+  border: 2px solid grey;
+  border-radius: 5px;
+  font-weight: normal;
+}
 /* https://en.wikipedia.org/wiki/Traditional_colors_of_Japan */

@@ -23,7 +23,6 @@
           id="totalBill"
           aria-describedby="totalBill"
           step="0.01"
-          required = "required"
         />
         <small id="totalBill" class="form-text text-muted"
           >Please input your total bill before tip here.</small
@@ -36,7 +35,6 @@
           class="form-control"
           id="numGuests"
           aria-describedby="numGuests"
-          required = "required"
         />
         <small id="numGuests" class="form-text text-muted"
           >Please input the number of guests here.</small
@@ -52,7 +50,6 @@
           step="0.5"
           min="0"
           max="5"
-          required = "required"
         />
         <small id="servQual" class="form-text text-muted"
           >How would you rate the quality of the service out of 5?</small
@@ -76,6 +73,31 @@
         <div>Total bill: <span id="totalBillDisplay"></span></div>
         <div>Guests: <span id="numGuestsDisplay"></span></div>
         <div>Service: <span id="servQualDisplay"></span></div>
+      </div>
+    </div>
+
+    <div class="prev-display d-flex justify-content-between">
+      <div class="history">
+        <label for="historyNumber">Select previous bill:</label>
+        <input
+          type="number"
+          class="historyNumber"
+          id="historyNumber"
+          aria-describedby="historyNumber"
+        />
+      <div class="prev-output-display">
+        <h5>Your ideal tip amounts are below!</h5>
+        <div>Total tip: <span id="prevTotalTip"></span></div>
+        <div>
+          Total tip percentage: <span id="prevTotalTipPercentage"></span>
+        </div>
+        <div>Average tip per person: <span id="prevTipPerPerson"></span></div>
+      </div>
+      <div class="prev-input-display">
+        <h5>Calculated from:</h5>
+        <div>Total bill: <span id="prevTotalBillDisplay"></span></div>
+        <div>Guests: <span id="prevNumGuestsDisplay"></span></div>
+        <div>Service: <span id="prevServQualDisplay"></span></div>
       </div>
     </div>
 
