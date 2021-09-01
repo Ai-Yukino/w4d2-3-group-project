@@ -44,19 +44,63 @@ class Data {
 // Also, we can rewrite "data" above using class methods
 // See the following sections's approach
 
-// 🍂Get input data after submit🍃
-let inputs = new Data();
-let formRef = document.querySelector("form");
+// 🍂Event handler pieces for form submission🍃
 
+// Instance of Data object
+let inputs = new Data();
+
+// References to DOM elements
+let formRef = document.querySelector("form");
+let totalBillRef = document.getElementById("totalBill"),
+  numGuestsRef = document.getElementById("numGuests"),
+  servQualRef = document.getElementById("servQual");
+let displayTotalBillRef = document.getElementById("totalBillDisplay"),
+  displayNumGuestsRef = document.getElementById("numGuestsDisplay"),
+  displayServQualRef = document.getElementById("servQualDisplay");
+
+// Fill inputs instance with user inputs
 function initializeData(e) {
   e.preventDefault();
-  // ^ prevents page refresh on submit
-  inputs.setTotalBill(document.getElementById("totalBill").value);
-  inputs.setNumGuests(document.getElementById("numGuests").value);
-  inputs.setServQual(document.getElementById("servQual").value);
+  // ^ Prevents page refresh on submit
+
+  // Store users inputs in inputs
+  inputs.setTotalBill(totalBillRef.value);
+  inputs.setNumGuests(numGuestsRef.value);
+  inputs.setServQual(servQualRef.value);
+
+  // Clear user input boxes
+  totalBillRef.value = null;
+  numGuestsRef.value = null;
+  servQualRef.value = null;
+
   console.log(inputs);
+  // Why .value for retrieving user inputs
+  // and .textContent for displaying user inputs?
+  // From https://stackoverflow.com/a/63179925
+  // it seems like .value is the only way to retriev data from form inputs,
+  // but from https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+  // .textContent gets the literal text content of a node as well as all
+  // its descendents. My guess is that .textContent is best practice in most
+  // situations because you want to overwrite the entire node.
+  // I think .value can still work for the second section in our case,
+  // but I just wanted to be safe.
 }
 
-formRef.addEventListener("submit", initializeData);
+function calculate(e) {
+  // Display user inputs in display box
+  displayTotalBillRef.textContent = inputs.totalBill;
+  displayNumGuestsRef.textContent = inputs.numGuests;
+  displayServQualRef.textContent = inputs.servQual;
 
-// 🍂Arithmetic🍃
+  // Calculate outputs
+}
+
+// 🍂Combine event handler pieces and attach it to form🍃
+function handleSubmit(e) {
+  initializeData(e);
+  calculate(e);
+}
+
+// Attatch event handler to form
+// that fires when submited
+formRef.addEventListener("submit", handleSubmit);
