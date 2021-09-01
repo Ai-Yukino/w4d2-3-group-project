@@ -171,17 +171,17 @@ formRef.addEventListener("submit", handleSubmit);
 function displayPrevious(e) {
   let i = e.target.value;
   prevTotalBillDisplayRef.textContent = `\$${histArr[i].getTotalBill}`;
-//   if (inputs.getNumGuests > 1) {
-//     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
-//   } else {
-//     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
-//   }
-//   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
+  //   if (inputs.getNumGuests > 1) {
+  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+  //   } else {
+  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
+  //   }
+  //   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
 
-//   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
-//   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
-//   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
-// }
+  //   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
+  //   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
+  //   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
+}
 
 // 🍂Previous attempts🍃
 
