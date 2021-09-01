@@ -106,8 +106,10 @@ function initializeData(e) {
 }
 
 //🌿Tip calculations🌿
-function calculate(e) {
+function calculate() {
   // Calculate outputs
+  // let multiplier =
+  //   1 + Number(inputs.getNumGuests > 1) * 0.03 * inputs.getNumGests;
   let multiplier = 1;
   inputs.setTotalTipPercentage = (
     0.05 *
@@ -124,9 +126,14 @@ function calculate(e) {
   );
 }
 
-function display(e) {
+// 🌿Displays current user inputs and current calculated values🌿
+function displayCurrent() {
   displayTotalBillRef.textContent = `\$${inputs.getTotalBill}`;
-  displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+  if (inputs.getNumGuests > 1) {
+    displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+  } else {
+    displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
+  }
   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
 
   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
@@ -134,7 +141,17 @@ function display(e) {
   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
 }
 
-// 🌿Store history🌿
+// 🌿Stores history of inputs instances in histArr🌿
+function storeHistory() {
+  histArr.push([]);
+  i = histArr.indexOf([]);
+  console.log(j);
+  // 🍁Need to "loop" over inputs object🍁
+  // Below does not work
+  // for (j = 0; j < length.histArr; j++) {
+  //   histArr[i][j]
+  // }
+}
 
 // 🌿history()🌿
 // // The function that is supposed to log the history
@@ -169,9 +186,12 @@ function display(e) {
 // 🍂Combine event handler pieces and attach it to form🍃
 function handleSubmit(e) {
   initializeData(e);
-  calculate(e);
-  display(e);
-  // history(e);
+  calculate();
+  storeHistory();
+  displayCurrent();
+
+  console.log(inputs);
+  console.log(histArr);
 }
 // Attatch event handler to form
 // that fires when submited
@@ -246,3 +266,10 @@ formRef.addEventListener("submit", handleSubmit);
 //   totalTipRef.textContent,
 //   tipPerPersonRef.textContent,
 // ]);
+
+// 🌿storeHistory()🌿
+// Does not work because this passes a
+// reference to the inputs object
+// function storeHistory() {
+//   histArr.push(inputs);
+// }
