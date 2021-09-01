@@ -14,7 +14,7 @@
     <title>Document</title>
   </head>
   <body>
-    <form>
+    <form id="user-input">
       <div class="form-group">
         <label for="bill">Input your total bill before tip:</label>
         <input
@@ -74,8 +74,10 @@
         <div>Service: <span id="servQualDisplay"></span></div>
       </div>
     </div>
-
-    <div class="prev-display d-flex flex-column justify-content-between">
+    <div
+      class="prev-display d-flex flex-column justify-content-between"
+      id="prev-display"
+    >
       <div class="history">
         <label for="historyNumber">Select previous bill:</label>
         <input
@@ -91,7 +93,8 @@
           <h5>Your ideal tip amounts are below!</h5>
           <div>Total tip: <span id="prevTotalTip"></span></div>
           <div>
-            Total tip percentage: <span id="prevTotalTipPercentage">test</span>
+            Total tip percentage:
+            <span id="prevTotalTipPercentage"></span>
           </div>
           <div>Average tip per person: <span id="prevTipPerPerson"></span></div>
         </div>
@@ -105,13 +108,13 @@
     </div>
 
     <!-- Test collapse button -->
-    <button data-toggle="collapse" href="#id">BIG BUTTON</button>
+    <!-- <button data-toggle="collapse" href="#id">BIG BUTTON</button>
     <div class="collapse" id="id">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque molestiae
       necessitatibus, beatae facere repellat id tempora excepturi iusto
       repellendus magni quam! Harum ullam aut facilis sequi, eaque iure tenetur
       ut.
-    </div>
+    </div> -->
 
     <!-- Optional JavaScript; choose one of the two! -->
 
