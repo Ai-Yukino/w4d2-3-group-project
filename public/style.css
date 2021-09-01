@@ -1,7 +1,6 @@
 .form-group {
   background-color: transparent;
 }
-
 form {
   background-color: #fcc9b9;
   width: 500px;
@@ -17,7 +16,6 @@ form {
   margin: 10px 20px;
   padding: 10px 10px;
 }
-
 .display > div {
   background-color: #ffb3a7;
   border-radius: 10px;
@@ -25,7 +23,6 @@ form {
   padding: 5px 5px;
   font-weight: bold;
 }
-
 .display span:not(:empty) {
   background-color: #f08f90;
   border: 2px solid #f08f90;
@@ -34,25 +31,32 @@ form {
 }
 
 .prev-display {
-  background-color: green;
+  background-color: #c6c2b6;
   width: 500px;
   border-radius: 10px;
   margin: 10px 20px;
   padding: 10px 10px;
 }
-
-.prev-display > div {
-  background-color: lightgreen;
+.prev-output-display,
+.prev-input-display {
+  background-color: #b9a193;
+  border-radius: 10px;
+  margin: 5px 5px;
+  padding: 5px 5px;
+  font-weight: bold;
+}
+.prev-display span:not(:empty) {
+  background-color: #97867c;
+  border: 2px solid #97867c;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.history {
+  background-color: #b9a193;
   border-radius: 10px;
   margin: 5px 5px;
   padding: 5px 5px;
   font-weight: bold;
 }
 
-.prevdisplay span:not(:empty) {
-  background-color: grey;
-  border: 2px solid grey;
-  border-radius: 5px;
-  font-weight: normal;
-}
 /* https://en.wikipedia.org/wiki/Traditional_colors_of_Japan */
