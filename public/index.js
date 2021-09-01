@@ -108,6 +108,8 @@ function initializeData(e) {
 //🌿Tip calculations🌿
 function calculate(e) {
   // Calculate outputs
+  // let multiplier =
+  //   1 + Number(inputs.getNumGuests > 1) * 0.03 * inputs.getNumGests;
   let multiplier = 1;
   inputs.setTotalTipPercentage = (
     0.05 *
@@ -126,7 +128,11 @@ function calculate(e) {
 
 function display(e) {
   displayTotalBillRef.textContent = `\$${inputs.getTotalBill}`;
-  displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+  if (inputs.getNumGuests > 1) {
+    displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+  } else {
+    displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
+  }
   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
 
   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
