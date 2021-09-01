@@ -88,7 +88,7 @@ let prevTotalTipRef = document.getElementById("prevTotalTip"),
   prevTotalTipPercentageRef = document.getElementById("prevTotalTipPercentage"),
   prevTipPerPersonRef = document.getElementById("prevTipPerPerson");
 
-// 🍂Component functions in handleSubmit() event handler🍃
+// 🍂Component functions for handleSubmit() event handler🍃
 // 🌿Fill inputs instance with user inputs🌿
 function initializeData(e) {
   //Prevents page refresh on submit
@@ -108,6 +108,8 @@ function initializeData(e) {
 //🌿Tip calculations🌿
 function calculate() {
   // Calculate outputs
+
+  // 🍁Need to determine formula for multiplier🍁
   // let multiplier =
   //   1 + Number(inputs.getNumGuests > 1) * 0.03 * inputs.getNumGests;
   let multiplier = 1;
@@ -144,76 +146,42 @@ function displayCurrent() {
 // 🌿Stores history of inputs instances in histArr🌿
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#enumerate_the_properties_of_an_object
 function storeHistory() {
-  console.log(histArr);
   let i = histArr.length;
-  histArr.push([]);
+  histArr.push(new Data());
   console.log(histArr);
   for (const property in inputs) {
-    histArr[i].push(inputs[property]);
+    histArr[i][property] = inputs[property];
   }
 }
 
-// 🌿history()🌿
-// // The function that is supposed to log the history
-// function history(e) {
-//   // Both of these work, so that's something
-//   // console.log(histArr[0][0]);
-//   // console.log(histArr);
-//   for (let i = 0; i < histArr.length; i++) {
-//     prevDisplayTotalBillRef[i] = histArr[i][0];
-//     prevDisplayNumGuestsRef[i] = histArr[i][1];
-//     prevDisplayServQualRef[i] = histArr[i][2];
-//     prevTotalTipPercentageRef[i] = histArr[i][3];
-//     prevTotalTipRef[i] = histArr[i][4];
-//     prevTipPerPersonRef[i] = histArr[i][5];
-//   }
-//   if (histArr.length > 1) {
-//     document.getElementById("prevTotalTip").innerHTML =
-//       prevTotalTipRef[histArr.length - 2];
-//     document.getElementById("prevTotalTipPercentage").innerHTML =
-//       prevTotalTipPercentageRef[histArr.length - 2];
-//     document.getElementById("prevTipPerPerson").innerHTML =
-//       prevTipPerPersonRef[histArr.length - 2];
-//     document.getElementById("prevTotalBillDisplay").innerHTML =
-//       prevDisplayTotalBillRef[histArr.length - 2];
-//     document.getElementById("prevNumGuestsDisplay").innerHTML =
-//       prevDisplayNumGuestsRef[histArr.length - 2];
-//     document.getElementById("prevServQualDisplay").innerHTML =
-//       prevDisplayServQualRef[histArr.length - 2];
-//   }
-// }
-
-// 🍂Combine event handler pieces and attach it to form🍃
+// 🍂Combine event handler component functions🍃
 function handleSubmit(e) {
   initializeData(e);
   calculate();
   storeHistory();
   displayCurrent();
-
-  console.log(inputs);
   console.log(histArr);
 }
-// Attatch event handler to form
-// that fires when submited
+
+// 🍂Attatch event handler to form that fires on submission🍃
 formRef.addEventListener("submit", handleSubmit);
 
-// example
-// let arr = [];
-// arr = [[inputs.getTotalBill, ...], []]
-// arr = [inputs_1, inputs_2, ...]
-// arr[1].getTotalBill
-// HistoryArr = [[inputs.getTotalBill, ...], []]
-// let historyRef = document.querySelector(`history`)
+// 🍂Event handler for previous submission history🍃
+// 🌿Displays previous user inputs and previous calculated values🌿
+function displayPrevious(e) {
+  let i = e.target.value;
+  prevTotalBillDisplayRef.textContent = `\$${histArr[i].getTotalBill}`;
+//   if (inputs.getNumGuests > 1) {
+//     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+//   } else {
+//     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
+//   }
+//   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
 
-// let temp = [];
-// let HistoryArr = [];
-
-// function tempfunction() {
-//   temp = [inputs.totalBill, inputs.numGuests, inputs.servQual];
-//   HistoryArr.push(temp);
+//   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
+//   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
+//   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
 // }
-
-// console.log(totalTipPercentageRef);
 
 // 🍂Previous attempts🍃
 
@@ -248,14 +216,6 @@ formRef.addEventListener("submit", handleSubmit);
 // I think .value can still work for the second section in our case,
 // but I just wanted to be safe.
 
-// 🌿References to history display🌿
-// let prevDisplayTotalBillRef = [];
-// let prevDisplayNumGuestsRef = [];
-// let prevDisplayServQualRef = [];
-// let prevTotalTipRef = [];
-// let prevTotalTipPercentageRef = [];
-// let prevTipPerPersonRef = [];
-
 // 🌿Append to history from inside calculate()🌿
 // Appends the inputs and calculations as an array, and appends that array to the array.
 // histArr.push([
@@ -272,4 +232,68 @@ formRef.addEventListener("submit", handleSubmit);
 // reference to the inputs object
 // function storeHistory() {
 //   histArr.push(inputs);
+// }
+
+// 🌿Example🌿
+// let arr = [];
+// arr = [[inputs.getTotalBill, ...], []]
+// arr = [inputs_1, inputs_2, ...]
+// arr[1].getTotalBill
+// HistoryArr = [[inputs.getTotalBill, ...], []]
+// let historyRef = document.querySelector(`history`)
+
+// 🌿history()🌿
+// 🥬References to history display🥬
+// let prevDisplayTotalBillRef = [];
+// let prevDisplayNumGuestsRef = [];
+// let prevDisplayServQualRef = [];
+// let prevTotalTipRef = [];
+// let prevTotalTipPercentageRef = [];
+// let prevTipPerPersonRef = [];
+// let temp = [];
+// let HistoryArr = [];
+
+// function tempfunction() {
+//   temp = [inputs.totalBill, inputs.numGuests, inputs.servQual];
+//   HistoryArr.push(temp);
+// }
+
+// 🥬history() function itself🥬
+// console.log(totalTipPercentageRef);
+// // The function that is supposed to log the history
+// function history(e) {
+//   // Both of these work, so that's something
+//   // console.log(histArr[0][0]);
+//   // console.log(histArr);
+//   for (let i = 0; i < histArr.length; i++) {
+//     prevDisplayTotalBillRef[i] = histArr[i][0];
+//     prevDisplayNumGuestsRef[i] = histArr[i][1];
+//     prevDisplayServQualRef[i] = histArr[i][2];
+//     prevTotalTipPercentageRef[i] = histArr[i][3];
+//     prevTotalTipRef[i] = histArr[i][4];
+//     prevTipPerPersonRef[i] = histArr[i][5];
+//   }
+//   if (histArr.length > 1) {
+//     document.getElementById("prevTotalTip").innerHTML =
+//       prevTotalTipRef[histArr.length - 2];
+//     document.getElementById("prevTotalTipPercentage").innerHTML =
+//       prevTotalTipPercentageRef[histArr.length - 2];
+//     document.getElementById("prevTipPerPerson").innerHTML =
+//       prevTipPerPersonRef[histArr.length - 2];
+//     document.getElementById("prevTotalBillDisplay").innerHTML =
+//       prevDisplayTotalBillRef[histArr.length - 2];
+//     document.getElementById("prevNumGuestsDisplay").innerHTML =
+//       prevDisplayNumGuestsRef[histArr.length - 2];
+//     document.getElementById("prevServQualDisplay").innerHTML =
+//       prevDisplayServQualRef[histArr.length - 2];
+//   }
+// }
+
+// 🌿Store history method via inner arrays🌿
+// console.log(histArr);
+// let i = histArr.length;
+// histArr.push([]);
+// console.log(histArr);
+// for (const property in inputs) {
+//   histArr[i].push(inputs[property]);
 // }
