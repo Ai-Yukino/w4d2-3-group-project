@@ -27,7 +27,7 @@ form {
   background-color: #f08f90;
   border: 2px solid #f08f90;
   border-radius: 5px;
-  font-weight: normal;
+  /* font-weight: normal; */
 }
 
 .prev-display {
@@ -49,7 +49,7 @@ form {
   background-color: #97867c;
   border: 2px solid #97867c;
   border-radius: 5px;
-  font-weight: normal;
+  /* font-weight: normal; */
 }
 .history {
   background-color: #b9a193;
