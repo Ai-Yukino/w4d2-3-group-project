@@ -99,9 +99,10 @@ function calculate(e) {
 
   // Calculate outputs
   let multiplier = 1;
-  totalTipPercentageRef.textContent = 0.05 * inputs.getServQual * multiplier * 100;
+  totalTipPercentageRef.textContent =
+    0.05 * inputs.getServQual * multiplier * 100;
   totalTipRef.textContent =
-    inputs.getTotalBill * totalTipPercentageRef.textContent/100;
+    (inputs.getTotalBill * totalTipPercentageRef.textContent) / 100;
   tipPerPersonRef.textContent = (
     totalTipRef.textContent / inputs.getNumGuests
   ).toFixed(2);
@@ -116,3 +117,9 @@ function handleSubmit(e) {
 // Attatch event handler to form
 // that fires when submited
 formRef.addEventListener("submit", handleSubmit);
+
+// example
+// let arr = [];
+// arr = [[inputs.getTotalBill, ...], []]
+// arr = [inputs_1, inputs_2, ...]
+// arr[1].getTotalBill

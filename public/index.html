@@ -71,12 +71,12 @@
       <div class="input-display">
         <h5>Calculated from:</h5>
         <div>Total bill: <span id="totalBillDisplay"></span></div>
-        <div>Guests: <span id="numGuestsDisplay"></span></div>
+        <div>Guests: <span id="numGuestsDisplay">test</span></div>
         <div>Service: <span id="servQualDisplay"></span></div>
       </div>
     </div>
 
-    <div class="prev-display d-flex justify-content-between">
+    <div class="prev-display d-flex flex-column justify-content-between">
       <div class="history">
         <label for="historyNumber">Select previous bill:</label>
         <input
@@ -84,20 +84,24 @@
           class="historyNumber"
           id="historyNumber"
           aria-describedby="historyNumber"
+          min="1"
         />
-      <div class="prev-output-display">
-        <h5>Your ideal tip amounts are below!</h5>
-        <div>Total tip: <span id="prevTotalTip"></span></div>
-        <div>
-          Total tip percentage: <span id="prevTotalTipPercentage"></span>
-        </div>
-        <div>Average tip per person: <span id="prevTipPerPerson"></span></div>
       </div>
-      <div class="prev-input-display">
-        <h5>Calculated from:</h5>
-        <div>Total bill: <span id="prevTotalBillDisplay"></span></div>
-        <div>Guests: <span id="prevNumGuestsDisplay"></span></div>
-        <div>Service: <span id="prevServQualDisplay"></span></div>
+      <div class="d-flex justify content between">
+        <div class="prev-output-display">
+          <h5>Your ideal tip amounts are below!</h5>
+          <div>Total tip: <span id="prevTotalTip"></span></div>
+          <div>
+            Total tip percentage: <span id="prevTotalTipPercentage">test</span>
+          </div>
+          <div>Average tip per person: <span id="prevTipPerPerson"></span></div>
+        </div>
+        <div class="prev-input-display">
+          <h5>Calculated from:</h5>
+          <div>Total bill: <span id="prevTotalBillDisplay"></span></div>
+          <div>Guests: <span id="prevNumGuestsDisplay">test</span></div>
+          <div>Service: <span id="prevServQualDisplay"></span></div>
+        </div>
       </div>
     </div>
 
