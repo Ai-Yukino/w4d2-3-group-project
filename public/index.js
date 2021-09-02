@@ -109,17 +109,10 @@ function initializeData(e) {
 
 //🌿Tip calculations🌿
 function calculate() {
-  // Calculate outputs
-
-  // 🍁Need to determine formula for multiplier🍁
-  // let multiplier =
-  //   1 + Number(inputs.getNumGuests > 1) * 0.03 * inputs.getNumGests;
-  let multiplier = 1;
+  let extra = (inputs.getNumGuests > 5) * inputs.getNumGuests * 0.02;
   inputs.setTotalTipPercentage = (
-    0.05 *
-    inputs.getServQual *
-    multiplier *
-    100
+    0.05 * inputs.getServQual * 100 +
+    extra
   ).toFixed(2);
   inputs.setTotalTip = (
     (inputs.getTotalBill * inputs.getTotalTipPercentage) /
@@ -184,13 +177,8 @@ formRef.addEventListener("submit", handleSubmit);
 // 🍂Event handler for previous submission history🍃
 // 🌿Displays previous user inputs and previous calculated values🌿
 function displayPrevious(e) {
+  // Input field begins with 1
   let i = e.target.value - 1;
-  // console.log(e);
-  // console.log(e.target);
-  // console.log(e.target.value);
-  // console.log(e.currentTarget.value);
-  console.log(i);
-  console.log(histArr[i]);
 
   prevTotalBillDisplayRef.textContent = `\$${histArr[i].getTotalBill}`;
   if (histArr[i].getNumGuests > 1) {
@@ -322,3 +310,8 @@ historyNumberRef.addEventListener("change", displayPrevious);
 // for (const property in inputs) {
 //   histArr[i].push(inputs[property]);
 // }
+
+// 🌿multiplier in calculate()🌿
+// 🍁Need to determine formula for multiplier🍁
+// let multiplier = 1 + (inputs.getNumGuests > 3) * 0.03 * inputs.getNumGuests;
+// let multiplier = 1;
