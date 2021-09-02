@@ -31,28 +31,29 @@ form {
 }
 
 .prev-display {
-  background-color: #c6c2b6;
+  background-color: #6b9362;
   width: 500px;
   border-radius: 10px;
   margin: 10px 20px;
   padding: 10px 10px;
 }
+
 .prev-output-display,
 .prev-input-display {
-  background-color: #b9a193;
+  background-color: #8db255;
   border-radius: 10px;
   margin: 5px 5px;
   padding: 5px 5px;
   font-weight: bold;
 }
 .prev-display span:not(:empty) {
-  background-color: #97867c;
-  border: 2px solid #97867c;
+  background-color: #8c9e5e;
+  border: 2px solid #8c9e5e;
   border-radius: 5px;
   /* font-weight: normal; */
 }
 .history {
-  background-color: #b9a193;
+  background-color: #8db255;
   border-radius: 10px;
   margin: 5px 5px;
   padding: 5px 5px;
