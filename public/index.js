@@ -109,7 +109,7 @@ function initializeData(e) {
 
 //🌿Tip calculations🌿
 function calculate() {
-  let extra = (inputs.getNumGuests > 5) * inputs.getNumGuests * 0.02;
+  let extra = (inputs.getNumGuests > 5) * inputs.getNumGuests * 0.001;
   inputs.setTotalTipPercentage = (
     0.05 * inputs.getServQual * 100 +
     extra
@@ -180,6 +180,7 @@ function displayPrevious(e) {
   // Input field begins with 1
   let i = e.target.value - 1;
 
+  // Display previous user inputs
   prevTotalBillDisplayRef.textContent = `\$${histArr[i].getTotalBill}`;
   if (histArr[i].getNumGuests > 1) {
     prevNumGuestsDisplayRef.textContent = `${histArr[i].getNumGuests} people`;
@@ -188,6 +189,7 @@ function displayPrevious(e) {
   }
   prevServQualDisplayRef.textContent = `${histArr[i].getServQual} / 5`;
 
+  // Display previous calculated values
   prevTotalTipPercentageRef.textContent = `${histArr[i].getTotalTipPercentage}%`;
   prevTotalTipRef.textContent = `\$${histArr[i].getTotalTip}`;
   prevTipPerPersonRef.textContent = `\$${histArr[i].getTipPerPerson}`;

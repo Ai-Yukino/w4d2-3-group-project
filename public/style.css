@@ -27,7 +27,7 @@ form {
   background-color: #f08f90;
   border: 2px solid #f08f90;
   border-radius: 5px;
-  /* font-weight: normal; */
+  font-weight: bold;
 }
 
 .prev-display {
@@ -50,7 +50,7 @@ form {
   background-color: #8c9e5e;
   border: 2px solid #8c9e5e;
   border-radius: 5px;
-  /* font-weight: normal; */
+  font-weight: bold;
 }
 .history {
   background-color: #8db255;
@@ -60,4 +60,7 @@ form {
   font-weight: bold;
 }
 
-/* https://en.wikipedia.org/wiki/Traditional_colors_of_Japan */
+.display p {
+  font-weight: normal;
+}
+.display/* https://en.wikipedia.org/wiki/Traditional_colors_of_Japan */;
