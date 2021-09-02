@@ -88,6 +88,8 @@ let prevTotalTipRef = document.getElementById("prevTotalTip"),
   prevTotalTipPercentageRef = document.getElementById("prevTotalTipPercentage"),
   prevTipPerPersonRef = document.getElementById("prevTipPerPerson");
 
+let historyNumberRef = document.getElementById("historyNumber");
+
 // 🍂Component functions for handleSubmit() event handler🍃
 // 🌿Fill inputs instance with user inputs🌿
 function initializeData(e) {
@@ -146,12 +148,25 @@ function displayCurrent() {
 // 🌿Stores history of inputs instances in histArr🌿
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#enumerate_the_properties_of_an_object
 function storeHistory() {
+  // new Data() isntance will be
+  // added at (legnth + 1) index
+  // of histArr
   let i = histArr.length;
+
+  // insert new Data() instance at end of histArr
   histArr.push(new Data());
-  console.log(histArr);
+
+  // populate new Data() instance with
+  // values from inputs instance
   for (const property in inputs) {
     histArr[i][property] = inputs[property];
   }
+
+  // enable display of previous submissions
+  console.log(historyNumberRef);
+  historyNumberRef.removeAttribute("disabled");
+  historyNumberRef.setAttribute("max", i);
+  console.log(historyNumberRef.getAttribute("max"));
 }
 
 // 🍂Combine event handler component functions🍃
