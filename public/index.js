@@ -152,7 +152,7 @@ function storeHistory() {
   // added at (legnth + 1) index
   // of histArr
   let i = histArr.length;
-  console.log("i is: " + i);
+  // console.log("i is: " + i);
   // insert new Data() instance at end of histArr
   histArr.push(new Data());
 
@@ -184,28 +184,29 @@ formRef.addEventListener("submit", handleSubmit);
 // 🍂Event handler for previous submission history🍃
 // 🌿Displays previous user inputs and previous calculated values🌿
 function displayPrevious(e) {
-  let i = e.target.value;
+  let i = e.target.value - 1;
   // console.log(e);
   // console.log(e.target);
   // console.log(e.target.value);
   // console.log(e.currentTarget.value);
   console.log(i);
-  console.log(histArr[i + 1]);
-  if (i == 0) {
-    return null;
-  } else {
-    prevTotalBillDisplayRef.textContent = `\$${histArr[i + 1].getTotalBill}`;
-    //   if (inputs.getNumGuests > 1) {
-    //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
-    //   } else {
-    //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
-    //   }
-    //   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
+  console.log(histArr[i]);
 
-    //   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
-    //   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
-    //   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
-  }
+  prevTotalBillDisplayRef.textContent = `\$${histArr[i].getTotalBill}`;
+  //   if (inputs.getNumGuests > 1) {
+  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+  //   } else {
+  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
+  //   }
+  //   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
+
+  //   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
+  //   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
+  //   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
+  // if (i < 1) {
+  //   return null;
+  // } else {
+  // }
 }
 
 // 🍂Attatch event handler to input that fires
