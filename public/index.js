@@ -109,7 +109,7 @@ function initializeData(e) {
 
 //🌿Tip calculations🌿
 function calculate() {
-  let extra = (inputs.getNumGuests > 5) * inputs.getNumGuests * 0.001;
+  let extra = (inputs.getNumGuests > 5) * inputs.getNumGuests * 0.0025;
   inputs.setTotalTipPercentage = (
     0.05 * inputs.getServQual * 100 +
     extra
