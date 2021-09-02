@@ -11,9 +11,17 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>🧮Tip calculator🧮</title>
   </head>
   <body>
+    <!-- Test collapse button -->
+    <!-- <button data-toggle="collapse" href="#id">BIG BUTTON</button>
+    <div class="collapse" id="id">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque molestiae
+      necessitatibus, beatae facere repellat id tempora excepturi iusto
+      repellendus magni quam! Harum ullam aut facilis sequi, eaque iure tenetur
+      ut.
+    </div> -->
     <form id="user-input">
       <div class="form-group">
         <label for="bill">Input your total bill before tip: (USD)</label>
@@ -62,7 +70,7 @@
       <button type="submit" class="btn btn-primary" id="button">Submit</button>
       <!-- onclick="data()" -->
       <!-- inline event handlers are considered bad practice
-        https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#inline_event_handlers_%E2%80%94_dont_use_these -->
+          https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#inline_event_handlers_%E2%80%94_dont_use_these -->
     </form>
     <div class="display d-flex justify-content-between">
       <div class="output-display">
@@ -114,15 +122,19 @@
       </div>
     </div>
 
-    <!-- Test collapse button -->
-    <!-- <button data-toggle="collapse" href="#id">BIG BUTTON</button>
-    <div class="collapse" id="id">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque molestiae
-      necessitatibus, beatae facere repellat id tempora excepturi iusto
-      repellendus magni quam! Harum ullam aut facilis sequi, eaque iure tenetur
-      ut.
-    </div> -->
-
+    <div class="display d-flex justify-content-between">
+      <div>
+        <h5>How is the recommended tip calculated?</h5>
+        <p>
+          Each rating point adds <span>5%</span> tip, and as long as there were
+          <span>6</span> guests, we also add <span>0.1%</span> tip for each
+          guest. The idea is that average service with a score of
+          <span>3 / 5</span> starts off with the average tip of
+          <span>15%</span>, but employees also deserve a larger tip for working
+          a larger party.
+        </p>
+      </div>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
