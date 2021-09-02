@@ -152,7 +152,7 @@ function storeHistory() {
   // added at (legnth + 1) index
   // of histArr
   let i = histArr.length;
-
+  console.log("i is: " + i);
   // insert new Data() instance at end of histArr
   histArr.push(new Data());
 
@@ -165,7 +165,7 @@ function storeHistory() {
   // enable display of previous submissions
   console.log(historyNumberRef);
   historyNumberRef.removeAttribute("disabled");
-  historyNumberRef.setAttribute("max", i);
+  historyNumberRef.setAttribute("max", i + 1);
   console.log(historyNumberRef.getAttribute("max"));
 }
 
@@ -185,19 +185,32 @@ formRef.addEventListener("submit", handleSubmit);
 // 🌿Displays previous user inputs and previous calculated values🌿
 function displayPrevious(e) {
   let i = e.target.value;
-  prevTotalBillDisplayRef.textContent = `\$${histArr[i].getTotalBill}`;
-  //   if (inputs.getNumGuests > 1) {
-  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
-  //   } else {
-  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
-  //   }
-  //   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
+  // console.log(e);
+  // console.log(e.target);
+  // console.log(e.target.value);
+  // console.log(e.currentTarget.value);
+  console.log(i);
+  console.log(histArr[i + 1]);
+  if (i == 0) {
+    return null;
+  } else {
+    prevTotalBillDisplayRef.textContent = `\$${histArr[i + 1].getTotalBill}`;
+    //   if (inputs.getNumGuests > 1) {
+    //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+    //   } else {
+    //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
+    //   }
+    //   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
 
-  //   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
-  //   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
-  //   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
+    //   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
+    //   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
+    //   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
+  }
 }
 
+// 🍂Attatch event handler to input that fires
+// whenever input value changes🍃
+historyNumberRef.addEventListener("change", displayPrevious);
 // 🍂Previous attempts🍃
 
 // 🌿data()🌿
