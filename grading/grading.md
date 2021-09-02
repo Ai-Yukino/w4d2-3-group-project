@@ -1,5 +1,9 @@
 # Grading
 
+# Deployed on Netlify
+
+[Link](https://sleepy-jepsen-c82e97.netlify.app/)
+
 # Total bill, number of guests, and quality of service
 
 index.html, used in index.js calculate various values
@@ -7,6 +11,7 @@ index.html, used in index.js calculate various values
 # Proposal
 
 proposal.md
+s
 
 # HTML, CSS, JavaScript
 
