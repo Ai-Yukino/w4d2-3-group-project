@@ -81,7 +81,7 @@ let totalTipRef = document.getElementById("totalTip"),
 
 // Field for displaying previous user input
 let prevTotalBillDisplayRef = document.getElementById("prevTotalBillDisplay"),
-  prevNumGuestsDisplayRef = document.getElementById("prevNumGuestDisplay"),
+  prevNumGuestsDisplayRef = document.getElementById("prevNumGuestsDisplay"),
   prevServQualDisplayRef = document.getElementById("prevServQualDisplay");
 // Field for displaying previous calculated values
 let prevTotalTipRef = document.getElementById("prevTotalTip"),
@@ -193,27 +193,23 @@ function displayPrevious(e) {
   console.log(histArr[i]);
 
   prevTotalBillDisplayRef.textContent = `\$${histArr[i].getTotalBill}`;
-  //   if (inputs.getNumGuests > 1) {
-  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
-  //   } else {
-  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
-  //   }
-  //   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
+  if (histArr[i].getNumGuests > 1) {
+    prevNumGuestsDisplayRef.textContent = `${histArr[i].getNumGuests} people`;
+  } else {
+    prevNumGuestsDisplayRef.textContent = `${histArr[i].getNumGuests} person`;
+  }
+  prevServQualDisplayRef.textContent = `${histArr[i].getServQual} / 5`;
 
-  //   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
-  //   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
-  //   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
-  // if (i < 1) {
-  //   return null;
-  // } else {
-  // }
+  prevTotalTipPercentageRef.textContent = `${histArr[i].getTotalTipPercentage}%`;
+  prevTotalTipRef.textContent = `\$${histArr[i].getTotalTip}`;
+  prevTipPerPersonRef.textContent = `\$${histArr[i].getTipPerPerson}`;
 }
 
 // 🍂Attatch event handler to input that fires
 // whenever input value changes🍃
 historyNumberRef.addEventListener("change", displayPrevious);
-// 🍂Previous attempts🍃
 
+// 🍂Previous attempts🍃
 // 🌿data()🌿
 // let placehold;
 // function data() {
