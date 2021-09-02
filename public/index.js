@@ -88,6 +88,8 @@ let prevTotalTipRef = document.getElementById("prevTotalTip"),
   prevTotalTipPercentageRef = document.getElementById("prevTotalTipPercentage"),
   prevTipPerPersonRef = document.getElementById("prevTipPerPerson");
 
+let historyNumberRef = document.getElementById("historyNumber");
+
 // 🍂Component functions for handleSubmit() event handler🍃
 // 🌿Fill inputs instance with user inputs🌿
 function initializeData(e) {
@@ -146,12 +148,25 @@ function displayCurrent() {
 // 🌿Stores history of inputs instances in histArr🌿
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#enumerate_the_properties_of_an_object
 function storeHistory() {
+  // new Data() isntance will be
+  // added at (legnth + 1) index
+  // of histArr
   let i = histArr.length;
+  console.log("i is: " + i);
+  // insert new Data() instance at end of histArr
   histArr.push(new Data());
-  console.log(histArr);
+
+  // populate new Data() instance with
+  // values from inputs instance
   for (const property in inputs) {
     histArr[i][property] = inputs[property];
   }
+
+  // enable display of previous submissions
+  console.log(historyNumberRef);
+  historyNumberRef.removeAttribute("disabled");
+  historyNumberRef.setAttribute("max", i + 1);
+  console.log(historyNumberRef.getAttribute("max"));
 }
 
 // 🍂Combine event handler component functions🍃
@@ -170,19 +185,32 @@ formRef.addEventListener("submit", handleSubmit);
 // 🌿Displays previous user inputs and previous calculated values🌿
 function displayPrevious(e) {
   let i = e.target.value;
-  prevTotalBillDisplayRef.textContent = `\$${histArr[i].getTotalBill}`;
-  //   if (inputs.getNumGuests > 1) {
-  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
-  //   } else {
-  //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
-  //   }
-  //   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
+  // console.log(e);
+  // console.log(e.target);
+  // console.log(e.target.value);
+  // console.log(e.currentTarget.value);
+  console.log(i);
+  console.log(histArr[i + 1]);
+  if (i == 0) {
+    return null;
+  } else {
+    prevTotalBillDisplayRef.textContent = `\$${histArr[i + 1].getTotalBill}`;
+    //   if (inputs.getNumGuests > 1) {
+    //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} people`;
+    //   } else {
+    //     displayNumGuestsRef.textContent = `${inputs.getNumGuests} person`;
+    //   }
+    //   displayServQualRef.textContent = `${inputs.getServQual} / 5`;
 
-  //   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
-  //   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
-  //   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
+    //   totalTipPercentageRef.textContent = `${inputs.getTotalTipPercentage}%`;
+    //   totalTipRef.textContent = `\$${inputs.getTotalTip}`;
+    //   tipPerPersonRef.textContent = `\$${inputs.getTipPerPerson}`;
+  }
 }
 
+// 🍂Attatch event handler to input that fires
+// whenever input value changes🍃
+historyNumberRef.addEventListener("change", displayPrevious);
 // 🍂Previous attempts🍃
 
 // 🌿data()🌿
